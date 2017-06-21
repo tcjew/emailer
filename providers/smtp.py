@@ -36,7 +36,7 @@ class SMTP:
         data = self.create_message_data(message)
 
         try:
-            smtp.sendmail(message.from_address, self.create_recipients_list(message), self.message_data_to_string(data))
+            smtp.sendmail(message.from_email, self.create_recipients_list(message), self.message_data_to_string(data))
             success = True
         except:
             success = False
